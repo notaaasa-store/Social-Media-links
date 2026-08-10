@@ -1,0 +1,333 @@
+/* ============================================
+   CSS Variables - Easy to customize colors
+   ============================================ */
+:root {
+    /* Brand Colors */
+    --primary-color: #ef5d9c;
+    --primary-light: #f8a8c9;
+    --primary-dark: #d44a85;
+    
+    /* Background Colors */
+    --bg-color: #fdf6f9;
+    --bg-gradient: linear-gradient(135deg, #fdf6f9 0%, #fceef4 50%, #f9e8f2 100%);
+    
+    /* Text Colors */
+    --text-primary: #2d2d2d;
+    --text-secondary: #5a5a5a;
+    --text-light: #888888;
+    
+    /* Card/Button Colors */
+    --card-bg: #ffffff;
+    --card-hover: #fef2f7;
+    --card-shadow: 0 4px 20px rgba(239, 93, 156, 0.1);
+    --card-shadow-hover: 0 8px 30px rgba(239, 93, 156, 0.2);
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 50px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Container
+   ============================================ */
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ============================================
+   Header Section
+   ============================================ */
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    animation: fadeInDown 0.6s ease;
+}
+
+.logo-image {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+}
+
+/* ============================================
+   Social Links Section
+   ============================================ */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+#social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-md);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-button:hover,
+.social-button:focus {
+    background: var(--card-hover);
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--primary-light);
+    outline: none;
+}
+
+.social-button:active {
+    transform: translateY(0);
+    box-shadow: var(--card-shadow);
+}
+
+.icon-wrapper {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.icon-wrapper svg {
+    width: 100%;
+    height: 100%;
+}
+
+.social-button:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+.social-button span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+/* Platform-specific colors for icons */
+.social-button.instagram svg {
+    fill: #E4405F;
+}
+
+.social-button.tiktok svg {
+    fill: #000000;
+}
+
+.social-button.facebook svg {
+    fill: #1877F2;
+}
+
+.social-button.whatsapp svg {
+    fill: #25D366;
+}
+
+/* ============================================
+   Footer Section
+   ============================================ */
+.footer {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+    animation: fadeIn 0.6s ease 0.4s backwards;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: var(--spacing-2xl) var(--spacing-xl);
+    }
+    
+    .logo-image {
+        max-width: 250px;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .social-button {
+        padding: var(--spacing-xl) var(--spacing-2xl);
+    }
+    
+    .icon-wrapper {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+    
+    .social-button span {
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 700px;
+    }
+    
+    .logo-image {
+        max-width: 280px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    .container {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .logo-image {
+        max-width: 160px;
+    }
+    
+    .social-button {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .icon-wrapper {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+    }
+    
+    .social-button span {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+.social-button:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
